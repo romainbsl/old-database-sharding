@@ -5,12 +5,12 @@
 For the use I will consider using 3 databases.
 
 - A `central` database that contains a list of cities, with their localization, either `EU` or `US`.
-- A `EU` database that contains the cities with general informations (country, area, population)
-- A `US` database that contains the cities with general informations (country, area, population)
+- A `EU` database that contains the cities with general information (country, area, population)
+- A `US` database that contains the cities with general information (country, area, population)
 
 ## Databases installation
 
-To quickly have a constistent environment I use Docker and MongoDB to prepare my data samples.
+To quickly have a consistent environment I use Docker and MongoDB to prepare my data samples.
 
 > You need to have [Docker](https://docs.docker.com/install/) installed
 
