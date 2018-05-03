@@ -46,7 +46,7 @@ Or, connect directly to the Docker container, with:
 
 To population the database you can execute the following code:
 
-```json
+```
 db.cities_directory.insert([
     {"city" : "London",        "region" : "EU"},
     {"city" : "Paris",         "region" : "EU"},
@@ -84,7 +84,7 @@ Or, connect directly to the Docker container, with:
 
 To population the database you can execute the following code:
 
-```json
+```
 db.cities_directory.insert([
     {"city" : "London",     "country": "England", "area":"1737.9", "population" : "8787892", "region" : "EU"},
     {"city" : "Paris",      "country": "France", "area":"2845", "population" : "2206488", "region" : "EU"},
@@ -112,7 +112,7 @@ Or, connect directly to the Docker container, with:
 
 To population the database you can execute the following code:
 
-```json
+```
 db.cities_directory.insert([
     {"city" : "New-York",      "country": "United-States", "area":"1213.37", "population" : "8622698", "region" : "US"},
     {"city" : "Washington",    "country": "United-States", "area":"177",     "population" : "693972",  "region" : "US"},
