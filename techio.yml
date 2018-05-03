@@ -2,6 +2,8 @@ title: How to use mutliple databases with Spring
 plan:
 - title: About this playground
   statement: markdowns/welcome.md
+- title: Database configuration
+  statement: markdowns/1_configuration.md
 projects:
   java:
     root: /java-project
