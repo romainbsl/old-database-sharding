@@ -1,6 +1,6 @@
-title: Spring 5 Project
+title: How to use mutliple databases with Spring
 plan:
-- title: Welcome
+- title: About this playground
   statement: markdowns/welcome.md
 projects:
   java:
