@@ -6,7 +6,7 @@ plan:
   statement: markdowns/1_configuration.md
 projects:
   java:
-    root: /java-project
+    root: /database-sharding
     runner:
       name: techio/java-maven3-junit4-runner
       version: 1.1.4-java-8
