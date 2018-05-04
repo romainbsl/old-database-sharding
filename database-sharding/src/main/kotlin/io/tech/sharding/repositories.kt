@@ -1,7 +1,7 @@
 package io.tech.sharding
 
-import org.springframework.data.mongodb.repository.MongoRepository
+import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 
-@Repository interface CitiesDirectoryRepository : MongoRepository<CitiesDirectory, String>
-@Repository interface CityRepository : MongoRepository<City, String>
+@Repository interface CitiesDirectoryRepository : JpaRepository<CitiesDirectory, Int>
+@Repository interface CityRepository : JpaRepository<City, Int>

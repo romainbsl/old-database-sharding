@@ -1,23 +1,30 @@
 package io.tech.sharding
 
-import org.springframework.data.annotation.Id
-import org.springframework.data.mongodb.core.mapping.Document
+import javax.persistence.*
 
-@Document(collection = "cities_directory")
+@Entity
+@Table(name = "cities_directory")
 data class CitiesDirectory(
-  @Id val id: String,
-  val city: String,
-  val region: Region
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  val id: Int = -1,
+  val city: String = "",
+  @Enumerated(EnumType.STRING)
+  val region: Region = Region.UNKNOWN
 )
 
-@Document(collection = "cities")
+@Entity
+@Table(name = "cities")
 data class City(
-  @Id val id: String,
-  val city: String,
-  val region: Region,
-  val country: String,
-  val area: Double,
-  val population: Long
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  val id: Int = -1,
+  val city: String = "",
+  @Enumerated(EnumType.STRING)
+  val region: Region = Region.UNKNOWN,
+  val country: String = "",
+  val area: Double = 0.0,
+  val population: Long = 0
 )
 
-enum class Region { EU, US }
+enum class Region { EU, US, UNKNOWN }

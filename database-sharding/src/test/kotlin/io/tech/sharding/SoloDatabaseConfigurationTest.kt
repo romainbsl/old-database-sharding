@@ -6,7 +6,6 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.data.mongodb.repository.config.EnableMongoRepositories
 import org.springframework.test.context.junit4.SpringRunner
 
 @RunWith(SpringRunner::class)
@@ -27,6 +26,20 @@ class SoloDatabaseConfigurationTest {
       .isEqualTo(15)
   }
 
-
-
+  @Test
+  fun `directory contains 8 EU cities`() {
+    assertThat(citiesDirectoryRepository.findAll())
+      .isNotNull
+      .isNotEmpty
+      .filteredOn { it.region == Region.EU }
+      .hasSize(8)
+  }
+  @Test
+  fun `directory contains 7 US cities`() {
+    assertThat(citiesDirectoryRepository.findAll())
+      .isNotNull
+      .isNotEmpty
+      .filteredOn { it.region == Region.US }
+      .hasSize(7)
+  }
 }
