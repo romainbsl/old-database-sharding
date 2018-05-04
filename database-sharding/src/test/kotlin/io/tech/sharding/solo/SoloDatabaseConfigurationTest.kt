@@ -1,6 +1,7 @@
-package io.tech.sharding
+package io.tech.sharding.solo
 
-import io.tech.sharding.solo.SoloConfiguration
+import io.tech.sharding.CitiesDirectoryRepository
+import io.tech.sharding.Region
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -34,6 +35,7 @@ class SoloDatabaseConfigurationTest {
       .filteredOn { it.region == Region.EU }
       .hasSize(8)
   }
+
   @Test
   fun `directory contains 7 US cities`() {
     assertThat(citiesDirectoryRepository.findAll())
