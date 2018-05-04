@@ -47,40 +47,5 @@ class SoloConfiguration
 ```kotlin
 @RunWith(SpringRunner::class)
 @SpringBootTest(classes = [SoloConfiguration::class])
-class SoloDatabaseConfigurationTest { 
-// { autofold
-  @Autowired
-  lateinit var citiesDirectoryRepository: CitiesDirectoryRepository
-  
-  @Test
-  fun `context loads`() {
-  }
-
-  @Test
-  fun `directory contains 15 cities`() {
-    assertThat(citiesDirectoryRepository.count())
-      .isNotNull()
-      .isEqualTo(15)
-  }
-
-  @Test
-  fun `directory contains 8 EU cities`() {
-    assertThat(citiesDirectoryRepository.findAll())
-      .isNotNull
-      .isNotEmpty
-      .filteredOn { it.region == Region.EU }
-      .hasSize(8)
-  }
-
-  @Test
-  fun `directory contains 7 US cities`() {
-    assertThat(citiesDirectoryRepository.findAll())
-      .isNotNull
-      .isNotEmpty
-      .filteredOn { it.region == Region.US }
-      .hasSize(7)
-  }
-// }
- }
+class SoloDatabaseConfigurationTest { ... }
 ```
-
