@@ -48,17 +48,10 @@ You can now connect to your MySQL instance with any client, and populate the dat
 CREATE TABLE cities_directory
 (
     id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    city varchar(10) NOT NULL,
-    region varchar(2) NOT NULL
-);
-CREATE UNIQUE INDEX cities_directory_unique_index ON cities_directory (city, region);
-CREATE TABLE cities_directory
-(
-    id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
     city varchar(25) NOT NULL,
     region varchar(2) NOT NULL
 );
-CREATE UNIQUE INDEX cities_directory_unique_index ON cities_directory (city, region);
+CREATE UNIQUE INDEX cities_directory_uindex ON cities_directory (city, region);
 
 INSERT INTO cities_directory (city, region) VALUES ('London', 'EU');
 INSERT INTO cities_directory (city, region) VALUES ('Paris', 'EU');
@@ -95,7 +88,7 @@ To start a new instance of the `EU` database, run the command:
 You can now connect to your MySQL instance with any client, and populate the database by executing the following code:
 
 ```sql
-CREATE TABLE city
+CREATE TABLE cities
 (
   id         int PRIMARY KEY NOT NULL AUTO_INCREMENT,
   city       varchar(25)     NOT NULL,
@@ -104,17 +97,17 @@ CREATE TABLE city
   population long            NOT NULL,
   region     varchar(2)      NOT NULL
 );
-CREATE UNIQUE INDEX city_uindex
-  ON city (city, region, country);
+CREATE UNIQUE INDEX cities_uindex
+  ON cities (city, region, country);
 
-INSERT INTO city (city, country, area, population, region) VALUES ('London', 'England', 1737.9, 8787892, 'EU');
-INSERT INTO city (city, country, area, population, region) VALUES ('Paris', 'France', 2845, 2206488, 'EU');
-INSERT INTO city (city, country, area, population, region) VALUES ('Brussels', 'Belgium', 161.38, 1175173, 'EU');
-INSERT INTO city (city, country, area, population, region) VALUES ('Berlin', 'Germany', 891.7, 3711930, 'EU');
-INSERT INTO city (city, country, area, population, region) VALUES ('Barcelona', 'Spain', 101.4, 1620809, 'EU');
-INSERT INTO city (city, country, area, population, region) VALUES ('Rome', 'Italy', 1285, 2873874, 'EU');
-INSERT INTO city (city, country, area, population, region) VALUES ('Olso', 'Norway', 480.76, 673469, 'EU');
-INSERT INTO city (city, country, area, population, region) VALUES ('Praha', 'Czech Republic', 496, 1280508, 'EU');
+INSERT INTO cities (city, country, area, population, region) VALUES ('London', 'England', 1737.9, 8787892, 'EU');
+INSERT INTO cities (city, country, area, population, region) VALUES ('Paris', 'France', 2845, 2206488, 'EU');
+INSERT INTO cities (city, country, area, population, region) VALUES ('Brussels', 'Belgium', 161.38, 1175173, 'EU');
+INSERT INTO cities (city, country, area, population, region) VALUES ('Berlin', 'Germany', 891.7, 3711930, 'EU');
+INSERT INTO cities (city, country, area, population, region) VALUES ('Barcelona', 'Spain', 101.4, 1620809, 'EU');
+INSERT INTO cities (city, country, area, population, region) VALUES ('Rome', 'Italy', 1285, 2873874, 'EU');
+INSERT INTO cities (city, country, area, population, region) VALUES ('Olso', 'Norway', 480.76, 673469, 'EU');
+INSERT INTO cities (city, country, area, population, region) VALUES ('Praha', 'Czech Republic', 496, 1280508, 'EU');
 ```
 
 ### US database
@@ -132,7 +125,7 @@ To start a new instance of the `US` database, run the command:
 You can now connect to your MySQL instance with any client, and populate the database by executing the following code:
 
 ```sql
-CREATE TABLE city
+CREATE TABLE cities
 (
   id         int PRIMARY KEY NOT NULL AUTO_INCREMENT,
   city       varchar(25)     NOT NULL,
@@ -141,14 +134,14 @@ CREATE TABLE city
   population long            NOT NULL,
   region     varchar(2)      NOT NULL
 );
-CREATE UNIQUE INDEX city_uindex
-  ON city (city, region, country);
+CREATE UNIQUE INDEX cities_uindex
+  ON cities (city, region, country);
 
-INSERT INTO city (city, country, area, population, region) VALUES ('New-York', 'United-States', 1213.37, 8622698, 'US');
-INSERT INTO city (city, country, area, population, region) VALUES ('Washington', 'United-States', 177, 693972, 'US');
-INSERT INTO city (city, country, area, population, region) VALUES ('Seatle', 'United-States', 369.2, 713700, 'US');
-INSERT INTO city (city, country, area, population, region) VALUES ('Dallas', 'United-States', 999.3, 1317929, 'US');
-INSERT INTO city (city, country, area, population, region) VALUES ('Chicago', 'United-States', 606.42, 2704958, 'US');
-INSERT INTO city (city, country, area, population, region) VALUES ('Miami', 'United-States', 145.20, 453579, 'US');
-INSERT INTO city (city, country, area, population, region) VALUES ('San Fransisco', 'United-States', 600.59, 884363, 'US');
+INSERT INTO cities (city, country, area, population, region) VALUES ('New-York', 'United-States', 1213.37, 8622698, 'US');
+INSERT INTO cities (city, country, area, population, region) VALUES ('Washington', 'United-States', 177, 693972, 'US');
+INSERT INTO cities (city, country, area, population, region) VALUES ('Seatle', 'United-States', 369.2, 713700, 'US');
+INSERT INTO cities (city, country, area, population, region) VALUES ('Dallas', 'United-States', 999.3, 1317929, 'US');
+INSERT INTO cities (city, country, area, population, region) VALUES ('Chicago', 'United-States', 606.42, 2704958, 'US');
+INSERT INTO cities (city, country, area, population, region) VALUES ('Miami', 'United-States', 145.20, 453579, 'US');
+INSERT INTO cities (city, country, area, population, region) VALUES ('San Fransisco', 'United-States', 600.59, 884363, 'US');
 ```
