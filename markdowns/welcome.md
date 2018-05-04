@@ -2,6 +2,8 @@
 
 This playground as the final goal to guide you through the usage of multiple databases with Spring.
 
+The need come in my day job to play with mutliple database depending on the context. In most cases, we need to connect to a central database to know on which local database we need to fetch data. Thus, we mostly work with 2 databases in the same thread.
+
 If you've read articles or Spring documentation, you probably know how to play with a database, and how easy it is. But, what's not easy to find or understand is to plug our Spring projects upon multiple databases.
 
 Via this playground, we'll go through multiple steps, with:
@@ -18,7 +20,7 @@ In this section you'll find some explanation for the different steps.
 
 ## Configuration
 
-To fullfil our tests cases we will need some basis configurations. We will work with 3 mongodb instances, one `central` and two `local` databases.
+To fullfil our tests cases we will need some basis configurations. We will work with 3 MySQL instances, one `central` and two `local` databases.
 
 For a quick and easy configuration I work with Docker.
 
