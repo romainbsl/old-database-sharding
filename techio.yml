@@ -4,6 +4,8 @@ plan:
   statement: markdowns/welcome.md
 - title: Database configuration
   statement: markdowns/1_configuration.md
+- title: Solo database
+  statement: markdowns/2_solo_database.md
 projects:
   java:
     root: /database-sharding

@@ -8,6 +8,49 @@ For the use I will consider using 3 databases.
 - A `EU` database that contains the cities with general information (country, area, population)
 - A `US` database that contains the cities with general information (country, area, population)
 
+### JPA entities
+
+All I need is to handle 2 entities, `CitiesDirectory` which is refering to a `central` database's table, 
+and `City` refering to a `local` database's table.
+
+```kotlin
+@Entity
+@Table(name = "cities_directory")
+data class CitiesDirectory(
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  val id: Int = -1,
+  val city: String = "",
+  @Enumerated(EnumType.STRING)
+  val region: Region = Region.UNKNOWN
+)
+
+@Entity
+@Table(name = "cities")
+data class City(
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  val id: Int = -1,
+  val city: String = "",
+  @Enumerated(EnumType.STRING)
+  val region: Region = Region.UNKNOWN,
+  val country: String = "",
+  val area: Double = 0.0,
+  val population: Long = 0
+)
+
+enum class Region { EU, US, UNKNOWN }
+```
+
+### Spring repositories
+
+For the exercice I just need a `JpaRepository` for each entity.
+
+```kotlin
+@Repository interface CitiesDirectoryRepository : JpaRepository<CitiesDirectory, Int>
+@Repository interface CityRepository : JpaRepository<City, Int>
+```
+
 ## Databases installation
 
 To quickly have a consistent environment I use Docker and MySQL to prepare my data samples.
